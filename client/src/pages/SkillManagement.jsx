@@ -28,7 +28,7 @@ export default function SkillManagement() {
 
   const fetchSkills = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/skills');
+      const res = await axios.get('https://skillgap-analyzer-server.onrender.com/api/skills');
       setSkills(res.data);
     } catch (err) {
       console.error('Error fetching skills:', err);
@@ -57,9 +57,9 @@ export default function SkillManagement() {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/skills/${editingId}`, formData);
+        await axios.put(`https://skillgap-analyzer-server.onrender.com/api/skills/${editingId}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/skills', formData);
+        await axios.post('https://skillgap-analyzer-server.onrender.com/api/skills', formData);
       }
       fetchSkills();
       resetForm();
@@ -74,7 +74,7 @@ export default function SkillManagement() {
   const handleDelete = async (id) => {
     if (confirm('Are you sure you want to delete this skill?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/skills/${id}`);
+        await axios.delete(`https://skillgap-analyzer-server.onrender.com/api/skills/${id}`);
         fetchSkills();
       } catch (err) {
         console.error('Error deleting skill:', err);
