@@ -394,9 +394,9 @@ export default function MERNQuiz() {
       const percentage = Math.round((score / MERN_QUESTIONS.length) * 100);
 
       // Get first skill for assessment
-      const skillsRes = await axios.get('http://localhost:5000/api/skills');
+      const skillsRes = await axios.get('https://skillgap-analyzer-server.onrender.com/api/skills');
       if (skillsRes.data.length > 0) {
-        await axios.post('http://localhost:5000/api/assessments', {
+        await axios.post('https://skillgap-analyzer-server.onrender.com/api/assessments', {
           skillId: skillsRes.data[0]._id,
           score: percentage,
           feedback: `MERN Quiz Score: ${score}/${MERN_QUESTIONS.length}`,
