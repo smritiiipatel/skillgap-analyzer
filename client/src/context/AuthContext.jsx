@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [loading, setLoading] = useState(false);
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://skillgap-analyzer-server.onrender.com/api';
 
   useEffect(() => {
     if (token) {
