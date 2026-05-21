@@ -36,7 +36,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 
-const API_BASE_URL = 'https://skillgap-analyzer-server.onrender.com';
+const API_BASE_URL = 'https://skillgap-analyzer-server.onrender.com/api'
 
 const createAxiosInstance = (token) => {
   return axios.create({
